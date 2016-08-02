@@ -1,0 +1,71 @@
+version: "2"
+services:
+  server:
+    image: pokemap
+    command: -os -fl
+    links:
+      - db
+    env_file:
+      - ./db.env
+      - ./server.env
+    ports:
+      - "8765:8765"
+  poke1:
+    image: pokemap
+    command: -ns
+    links:
+      - db
+    env_file:
+      - ./db.env
+      - ./bot1.env
+  poke2:
+    image: pokemap
+    command: -ns
+    links:
+      - db
+    env_file:
+      - ./db.env
+      - ./bot2.env
+  poke3:
+    image: pokemap
+    command: -ns
+    links:
+      - db
+    env_file:
+      - ./db.env
+      - ./bot3.env
+  poke4:
+    image: pokemap
+    command: -ns
+    links:
+      - db
+    env_file:
+      - ./db.env
+      - ./bot4.env
+  poke5:
+    image: pokemap
+    command: -ns
+    links:
+      - db
+    env_file:
+      - ./db.env
+      - ./bot5.env
+  poke6:
+    image: pokemap
+    command: -ns
+    links:
+      - db
+    env_file:
+      - ./db.env
+      - ./bot6.env
+  poke7:
+    image: pokemap
+    command: -ns
+    links:
+      - db
+    env_file:
+      - ./db.env
+      - ./bot7.env
+  db:
+    image: mariadb:10.1
+    env_file: ./db.env

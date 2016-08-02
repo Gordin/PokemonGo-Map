@@ -30,3 +30,6 @@ RUN apk add --no-cache build-base \
 
 # Add the rest of the app code
 COPY . /usr/src/app
+
+# Set Entrypoint with hard-coded options
+ENTRYPOINT ["sh", "./entrypoint.sh"]
